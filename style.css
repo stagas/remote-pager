@@ -1,0 +1,21 @@
+
+.pager-items {
+  display: block;
+  width: 400px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.pager-item {
+  display: block;
+  position: relative;
+  width: 400px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.pager-item-hide {
+  display: none;
+}

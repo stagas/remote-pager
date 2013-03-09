@@ -1,0 +1,17 @@
+{
+  "name": "remote-pager",
+  "version": "0.0.1",
+  "description": "remote resource pagination component",
+  "keywords": ["pager","pagination"],
+  "author": "stagas",
+  "license": "MIT",
+  "dependencies": {
+    "stagas/pager": "*",
+    "component/spin": "*"
+  },
+  "development": {
+    "stagas/watch-js": "*"
+  },
+  "scripts": ["index.js"],
+  "styles": ["style.css"]
+}
