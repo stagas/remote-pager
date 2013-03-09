@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>remote-pager</title>
+    <link rel="stylesheet" href="build/build.css">
+    <style>
+      body {
+        padding: 30px;
+      }
+      .pager {
+        width: 400px;
+        margin: 10px 0;
+      }
+      .pager-items {
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="build/build.js"></script>
+    <script>
+      // dev update page
+      require('stagas-watch-js')
+
+      // deps
+      var RemotePager = require('remote-pager')
+
+      // create pager
+      var pager = RemotePager()
+      pager.total(500).perpage(10).render().fetch(fetch).show(0)
+
+      // put items and nav in different places
+      append(document.body, pager.itemsEl)
+      append(document.body, pager.el)
+
+      // our custom page fetcher
+      function fetch (i, fn) {
+        // something async, like an ajax call
+        setTimeout(function () {
+          // callback response body
+          fn('Successfully fetched page: '+(i+1))
+        }, Math.random()*2000|0)
+      }
+
+      // utils
+
+      // append jquery/dom consolidator
+      function append (target, el) {
+        if (el.appendTo) el.appendTo(target)
+        else document.body.appendChild(el)
+      }
+    </script>
+  </body>
+</html>
